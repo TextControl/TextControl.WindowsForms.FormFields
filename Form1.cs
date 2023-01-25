@@ -73,8 +73,11 @@ namespace tx_formfield_editor
 
             // open the dialog to allow user to add some items
             fddField.ShowDialog();
-            fddField.Text = fddField.ListEntries.ElementAt(0);
-
+            if(fddField.ListEntries.Count()>0)
+            {
+                fddField.Text = fddField.ListEntries.ElementAt(0);
+            }
+            
             textControl1.ApplicationFields.Add(fddField.ApplicationField);
         }
 
